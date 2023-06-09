@@ -26,5 +26,6 @@ JTV Premium is a third-party application. The developers of JTV Premium are not 
 
 <br>
 
+
 <h4 align='center'>© 𝟮𝟬𝟮3 JTVPREMIUM</h4>
 
