@@ -1,0 +1,71 @@
+name: Upload Assets
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  upload_assets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Generate Tag Name
+        id: tag_name
+        run: echo "::set-output name=tag_name::$(date +'%Y%m%d%H%M%S')"
+
+      - name: Upload Assets
+        uses: actions/upload-artifact@v2
+        with:
+          name: Assets
+          path: |
+            ${{ github.workspace }}/files/MACOS-JTV-PREMIUM.zip
+            ${{ github.workspace }}/files/WINDOWS-JTV-PREMIUM.zip
+            ${{ github.workspace }}/files/JTV-PREMIUM.apk
+
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          tag_name: ${{ steps.tag_name.outputs.tag_name }}
+          release_name: Release ${{ steps.tag_name.outputs.tag_name }}
+          body: |
+            Add a descriptive release message here
+          draft: false
+          prerelease: false
+
+      - name: Publish Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ github.workspace }}/files/MACOS-JTV-PREMIUM.zip
+          asset_name: MACOS-JTV-PREMIUM.zip
+          asset_content_type: application/zip
+      
+      - name: Attach Assets to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ github.workspace }}/files/WINDOWS-JTV-PREMIUM.zip
+          asset_name: WINDOWS-JTV-PREMIUM.zip
+          asset_content_type: application/zip
+
+      - name: Attach Assets to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ github.workspace }}/files/JTV-PREMIUM.apk
+          asset_name: JTV-PREMIUM.apk
+          asset_content_type: application/vnd.android.package-archive
