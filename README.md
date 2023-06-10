@@ -9,9 +9,9 @@ download application and install enjony live tv
 
 ### Download
 
-[ANDROID](https://github.com/jtvpremium/jio-jtv-premium/blob/master/files/JTV-PREMIUM.apk) <br>
-[WINDWOS](WINDOWS-JTV-PREMIUM.zip) <br>
-[MACOS](https://github.com/jtvpremium/jio-jtv-premium/blob/master/files/MACOS-JTV-PREMIUM.zip)
+[ANDROID](https://raw.githubusercontent.com/jtvpremium/jio-jtv-premium/master/files/JTV-PREMIUM.apk) <br>
+[WINDWOS](https://raw.githubusercontent.com/jtvpremium/jio-jtv-premium/master/files/WINDOWS-JTV-PREMIUM.zip) <br>
+[MACOS](https://raw.githubusercontent.com/jtvpremium/jio-jtv-premium/master/files/MACOS-JTV-PREMIUM.zip)
 
 
 ### Jio Login
