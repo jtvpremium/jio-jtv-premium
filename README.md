@@ -5,7 +5,14 @@ JIO JTV Premium is a feature-rich live TV application that provides seamless str
 
 Star repo if you find this helpful
 
-download application and install enjony this live tv
+download application and install enjony live tv
+
+### Download
+
+[ANDROID](https://github.com/jtvpremium/jio-jtv-premium/blob/master/files/JTV-PREMIUM.apk) <br>
+[WINDWOS](WINDOWS-JTV-PREMIUM.zip) <br>
+[MACOS](https://github.com/jtvpremium/jio-jtv-premium/blob/master/files/MACOS-JTV-PREMIUM.zip)
+
 
 ### Jio Login
 If you are running the application for the first time, probably you need to login using your Jio number and otp. In case login is successful, you will receive a success message
