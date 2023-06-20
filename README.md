@@ -17,7 +17,7 @@ download application and install enjony live tv
 ### Jio Login
 If you are running the application for the first time, probably you need to login using your Jio number and otp. In case login is successful, you will receive a success message
 
-For any other issues faced, make sure you join our discord server: https://discord.gg/VfWdjUTr 
+For any other issues faced, make sure you join our discord server: https://discord.gg/SwMWScYN9D
 
 Our telegram group is closed and is no more available. Please join discord for all latest official communications 
 
