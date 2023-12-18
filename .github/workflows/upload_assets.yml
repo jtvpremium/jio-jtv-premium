@@ -16,6 +16,10 @@ jobs:
       - name: Generate Tag Name
         id: tag_name
         run: echo "::set-output name=tag_name::$(date +'%Y%m%d%H%M%S')"
+      
+      - name: Workspace
+        id: workspace_name
+        run: echo ${{ github.workspace }}
         
 
       - name: Upload Assets
@@ -32,7 +36,6 @@ jobs:
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
-        run: echo ${{ github.workspace }}
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
