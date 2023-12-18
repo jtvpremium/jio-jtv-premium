@@ -22,10 +22,10 @@ jobs:
         with:
           name: Assets
           path: |
-            ${{ github.workspace }}/files/MACOS-JTV-PREMIUM.zip
-            ${{ github.workspace }}/files/WINDOWS-JTV-PREMIUM.zip
-            ${{ github.workspace }}/files/JTV-PREMIUM.apk
-            ${{ github.workspace }}/files/ANDROID-TV-JTV-PREMIUM.apk
+            https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/MACOS-JTV-PREMIUM.zip
+            https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/WINDOWS-JTV-PREMIUM.zip
+            https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/JTV-PREMIUM.apk
+            https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/ANDROID-TV-JTV-PREMIUM.apk
 
 
       - name: Create Release
@@ -47,7 +47,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ github.workspace }}/files/MACOS-JTV-PREMIUM.zip
+          asset_path: https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/MACOS-JTV-PREMIUM.zip
           asset_name: MACOS-JTV-PREMIUM.zip
           asset_content_type: application/zip
       
@@ -57,7 +57,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ github.workspace }}/files/WINDOWS-JTV-PREMIUM.zip
+          asset_path: https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/WINDOWS-JTV-PREMIUM.zip
           asset_name: WINDOWS-JTV-PREMIUM.zip
           asset_content_type: application/zip
 
@@ -67,7 +67,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ github.workspace }}/files/JTV-PREMIUM.apk
+          asset_path: https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/JTV-PREMIUM.apk
           asset_name: JTV-PREMIUM.apk
           asset_content_type: application/vnd.android.package-archive
 
@@ -77,6 +77,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ github.workspace }}/files/ANDROID-TV-JTV-PREMIUM.apk
+          asset_path: https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/ANDROID-TV-JTV-PREMIUM.apk
           asset_name: ANDROID-TV-JTV-PREMIUM.apk
           asset_content_type: application/vnd.android.package-archive
