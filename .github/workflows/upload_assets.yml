@@ -16,21 +16,25 @@ jobs:
       - name: Generate Tag Name
         id: tag_name
         run: echo "::set-output name=tag_name::$(date +'%Y%m%d%H%M%S')"
+        
 
       - name: Upload Assets
         uses: actions/upload-artifact@v2
         with:
           name: Assets
           path: |
-            https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/MACOS-JTV-PREMIUM.zip
-            https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/WINDOWS-JTV-PREMIUM.zip
-            https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/JTV-PREMIUM.apk
-            https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/ANDROID-TV-JTV-PREMIUM.apk
+            ${{ github.workspace }}/files/MACOS-JTV-PREMIUM.zip
+            ${{ github.workspace }}/files/WINDOWS-JTV-PREMIUM.zip
+            ${{ github.workspace }}/files/JTV-PREMIUM.apk
+            ${{ github.workspace }}/files/ANDROID-TV-JTV-PREMIUM.apk
 
 
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
+        - run: |
+          echo ${{ github.workspace }}
+          echo $GITHUB_WORKSPACE
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
@@ -47,7 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/MACOS-JTV-PREMIUM.zip
+          asset_path: ${{ github.workspace }}/files/MACOS-JTV-PREMIUM.zip
           asset_name: MACOS-JTV-PREMIUM.zip
           asset_content_type: application/zip
       
@@ -57,7 +61,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/WINDOWS-JTV-PREMIUM.zip
+          asset_path: ${{ github.workspace }}/files/WINDOWS-JTV-PREMIUM.zip
           asset_name: WINDOWS-JTV-PREMIUM.zip
           asset_content_type: application/zip
 
@@ -67,16 +71,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/JTV-PREMIUM.apk
+          asset_path: ${{ github.workspace }}/files/JTV-PREMIUM.apk
           asset_name: JTV-PREMIUM.apk
           asset_content_type: application/vnd.android.package-archive
 
       - name: Attach Assets to Release
         uses: actions/upload-release-asset@v1
+        run: echo ${{ github.workspace }}
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/ANDROID-TV-JTV-PREMIUM.apk
+          asset_path: ${{ github.workspace }}/files/ANDROID-TV-JTV-PREMIUM.apk
           asset_name: ANDROID-TV-JTV-PREMIUM.apk
           asset_content_type: application/vnd.android.package-archive
