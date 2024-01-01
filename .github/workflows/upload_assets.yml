@@ -17,6 +17,10 @@ jobs:
         id: tag_name
         run: echo "::set-output name=tag_name::$(date +'%Y%m%d%H%M%S')"
 
+      - name: Workspace Tag Name
+        id: workspace_name
+        run: echo ${{ github.workspace }}
+
       - name: Upload Assets
         uses: actions/upload-artifact@v2
         with:

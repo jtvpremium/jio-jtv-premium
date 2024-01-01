@@ -8,10 +8,10 @@ Star repo if you find this helpful
 download application and install enjony live tv
 
 ### Download
-[ANDROID-TV](https://raw.githubusercontent.com/jtvpremium/jio-jtv-premium/master/files/ANDROID-TV-JTV-PREMIUM.apk) (BETA Version) <br>
-[ANDROID](https://raw.githubusercontent.com/jtvpremium/jio-jtv-premium/master/files/JTV-PREMIUM.apk) <br>
-[WINDWOS](https://raw.githubusercontent.com/jtvpremium/jio-jtv-premium/master/files/WINDOWS-JTV-PREMIUM.zip) <br>
-[MACOS](https://raw.githubusercontent.com/jtvpremium/jio-jtv-premium/master/files/MACOS-JTV-PREMIUM.zip)
+[ANDROID-TV](https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/ANDROID-TV-JTV-PREMIUM.apk) (BETA Version) <br>
+[ANDROID](https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/JTV-PREMIUM.apk) <br>
+[WINDWOS](https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/WINDOWS-JTV-PREMIUM.zip) <br>
+[MACOS](https://github.com/jtvpremium/jio-jtv-premium/raw/master/files/MACOS-JTV-PREMIUM.zip)
 
 
 ### Jio Login
